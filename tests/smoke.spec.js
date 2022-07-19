@@ -31,6 +31,11 @@ const { test, expect } = require('@playwright/test');
  *  d. Privacy Policy: https://virtualitics.com/privacy-policy-2/
 */
 
+let groupIndustries = 'Industries';
+let groupAboutUs = 'About Us';
+let groupResources = 'Resources';
+let groupMiscellaneous = 'Miscellaneous';
+
 test.describe('Smoke test', () => {
     
     test('Home page', async({ page }) => {
@@ -51,7 +56,7 @@ test.describe('Smoke test', () => {
 
     // Industries pages
 
-    test('Industries: Life Sciences', async({ page }) => {
+    test(groupIndustries + ': Life Sciences', async({ page }) => {
         
         await page.goto('https://virtualitics.com/life-sciences/');
               
@@ -59,21 +64,21 @@ test.describe('Smoke test', () => {
         await expect(page.locator('text=Improve patient outcomes and accelerate discovery').first()).toBeVisible();
     });
 
-    test('Industries: Industry 4.0', async({ page }) => {
+    test(groupIndustries + ': Industry 4.0', async({ page }) => {
         await page.goto('https://virtualitics.com/industry-4-0/');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=Increase agility and eliminate downtime').first()).toBeVisible();
     });
 
-    test('Industries: Financial Services', async({ page }) => {
+    test(groupIndustries + ': Financial Services', async({ page }) => {
         await page.goto('https://virtualitics.com/financial-services/');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=Protect and grow your customers').first()).toBeVisible();
     });
 
-    test('Industries: Federal', async({ page }) => {
+    test(groupIndustries + ': Federal', async({ page }) => {
         await page.goto('https://virtualitics.com/federal-2/');
 
         // Expect text specific to the page to appear
@@ -82,28 +87,28 @@ test.describe('Smoke test', () => {
 
     // About Us
     
-    test('About Us: News', async({ page }) => {
+    test(groupAboutUs + ': News', async({ page }) => {
         await page.goto('https://virtualitics.com/news/');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=Read the latest Virtualitics news').first()).toBeVisible();
     });
 
-    test('About Us: Leadership', async({ page }) => {
+    test(groupAboutUs + 'About Us: Leadership', async({ page }) => {
         await page.goto('https://virtualitics.com/leadership/');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=Our Leadership').first()).toBeVisible();
     });
 
-    test('About Us: Careers', async({ page }) => {
+    test(groupAboutUs + ': Careers', async({ page }) => {
         await page.goto('https://virtualitics.com/careers/');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=Be part of our journey').first()).toBeVisible();
     });
 
-    test('About Us: Contact Us', async({ page }) => {
+    test(groupAboutUs + ': Contact Us', async({ page }) => {
         await page.goto('https://virtualitics.com/contact-us/');
 
         // Expect text specific to the page to appear
@@ -112,28 +117,28 @@ test.describe('Smoke test', () => {
 
     // Resources pages
 
-    test('Resources: Blog', async({ page }) => {
+    test(groupResources + ': Blog', async({ page }) => {
         await page.goto('https://blog.virtualitics.com/');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=Virtualitics Blog').first()).toBeVisible();
     });
 
-    test('Resources: eBooks and Webinars', async({ page }) => {
+    test(groupResources + ': eBooks and Webinars', async({ page }) => {
         await page.goto('https://virtualitics.com/resources');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=eBooks and Webinars').first()).toBeVisible();
     });
 
-    test('Resources: Cyber Security Standards', async({ page }) => {
+    test(groupResources + ': Cyber Security Standards', async({ page }) => {
         await page.goto('https://virtualitics.com/cyber-security-standards/');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=Our commitment to security').first()).toBeVisible();
     });
 
-    test('Resources: Documentation', async({ page }) => {
+    test(groupResources + ': Documentation', async({ page }) => {
         await page.goto('https://docs.virtualitics.com/');
 
         // Expect text specific to the page to appear
@@ -142,21 +147,21 @@ test.describe('Smoke test', () => {
 
     // Miscellaneous pages
 
-    test('Miscellaneious: Request Demo', async({ page }) => {
+    test(groupMiscellaneous + ': Request Demo', async({ page }) => {
         await page.goto('https://resources.virtualitics.com/virtualitics-demo-request');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=Fill out the form below and our team will reach out to you to schedule a demo.').first()).toBeVisible();
     });
 
-    test('Miscellaneious: Job Openings (Breezy)', async({ page }) => {
+    test(groupMiscellaneous + ': Job Openings (Breezy)', async({ page }) => {
         await page.goto('https://virtualitics.breezy.hr/');
 
         // Expect text specific to the page to appear
         await expect(page.locator('text=We\'re looking for amazing people to join our fast-growing team.').first()).toBeVisible();
     });
 
-    test('Miscellaneious: Terms of Use', async({ page }) => {
+    test(groupMiscellaneous + ': Terms of Use', async({ page }) => {
         await page.goto('https://virtualitics.com/terms-of-use/');
 
         await page.click('text=Accept');
@@ -165,7 +170,7 @@ test.describe('Smoke test', () => {
         await expect(page.locator('text=Terms of Use').first()).toBeVisible();
     });
 
-    test('Miscellaneious: Privacy Policy', async({ page }) => {
+    test(groupMiscellaneous + ': Privacy Policy', async({ page }) => {
         await page.goto('https://virtualitics.com/privacy-policy-2/');
 
         await page.click('text=Accept');
